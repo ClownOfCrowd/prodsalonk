@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lumiere Atelier Website
 
-## Getting Started
+Production-ready portfolio website for a premium beauty salon / self-care studio.
+Built with Next.js App Router, TypeScript, Tailwind CSS, and subtle Framer Motion interactions.
 
-First, run the development server:
+## What this project includes
+
+- Multi-page salon website: Home, Services, Service detail, Team, Gallery, Booking, Contact
+- Full multilingual support: English, Russian, Spanish
+- Language switcher in the header with persistent cookie-based preference
+- Mobile quick booking flow with floating action button and modal
+- Booking form with realistic success state and UX microcopy
+- Content-heavy trust sections:
+  - Treatment Philosophy
+  - Products / Ingredients
+  - Before / After cases
+  - How It Works
+  - Enhanced Testimonials
+  - Expert Credibility
+  - FAQ
+  - Membership packages
+  - Studio Experience
+
+## Tech stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+
+## Local development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lint:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+Production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure (high level)
 
-## Deploy on Vercel
+- `app/` - routes and page composition
+- `components/layout/` - global layout pieces (navbar, footer, mobile CTA, cookie banner)
+- `components/sections/` - reusable content sections
+- `components/ui/` - small UI primitives
+- `lib/i18n.ts` - locale model and cookie locale resolution
+- `lib/salon-data.ts` - fully localized business content and data helpers
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All visual styling follows one premium design system (no per-language style drift).
+- Language preference is stored in cookie `locale` and applied globally.
+- AGENTS and CLAUDE local instruction files are intentionally ignored in git.
