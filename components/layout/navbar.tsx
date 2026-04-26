@@ -10,7 +10,6 @@ type NavbarProps = {
 };
 
 export function Navbar({ locale }: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
   const menuTriggerRef = useRef<HTMLButtonElement | null>(null);
@@ -50,16 +49,6 @@ export function Navbar({ locale }: NavbarProps) {
     { href: "/booking", label: text.nav.booking },
     { href: "/contact", label: text.nav.contact },
   ];
-
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 12);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
@@ -115,11 +104,7 @@ export function Navbar({ locale }: NavbarProps) {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b transition-all duration-300 ${
-        isScrolled
-          ? "border-(--color-line) bg-(--color-surface)/80 shadow-(--shadow-soft) backdrop-blur-xl"
-          : "border-transparent bg-transparent"
-      }`}
+      className="sticky top-0 z-40 border-b border-(--color-line) bg-(--color-surface)"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="font-display text-xl tracking-wide text-(--color-text)">
@@ -137,7 +122,7 @@ export function Navbar({ locale }: NavbarProps) {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <div className="hidden rounded-xl border border-(--color-line) bg-white/80 p-1 md:flex" aria-label="Language switcher">
+          <div className="hidden rounded-xl border border-(--color-line) bg-white p-1 md:flex" aria-label="Language switcher">
             {locales.map((item) => (
               <button
                 key={item}
@@ -157,7 +142,7 @@ export function Navbar({ locale }: NavbarProps) {
             ref={menuTriggerRef}
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-(--color-line) bg-white/80 text-(--color-text) transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-(--color-line) bg-white text-(--color-text) transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 md:hidden"
             aria-label={mobileCopy.openMenu}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -171,7 +156,7 @@ export function Navbar({ locale }: NavbarProps) {
 
           <Link
             href="/booking"
-            className="hidden rounded-xl border border-(--color-line) bg-white/80 px-4 py-2 text-sm font-semibold text-(--color-text) transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 md:inline-flex"
+            className="hidden rounded-xl border border-(--color-line) bg-white px-4 py-2 text-sm font-semibold text-(--color-text) transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2 md:inline-flex"
           >
             {text.nav.book}
           </Link>
@@ -182,7 +167,7 @@ export function Navbar({ locale }: NavbarProps) {
         <div className="md:hidden" role="dialog" aria-modal="true" aria-label={mobileCopy.menu}>
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-black/35 backdrop-blur-[1px]"
+            className="fixed inset-0 z-40 bg-black/40"
             aria-label={mobileCopy.closeMenu}
             onClick={closeMobileMenu}
           />

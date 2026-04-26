@@ -31,7 +31,7 @@ export function CookieConsent({ locale }: CookieConsentProps) {
   };
 
   return (
-    <div className="fixed bottom-24 left-4 right-4 z-50 rounded-2xl border border-(--color-line) bg-(--color-surface) p-4 shadow-(--shadow-soft) md:bottom-6 md:left-auto md:right-6 md:max-w-sm">
+    <div className="fixed bottom-24 left-4 right-4 z-50 rounded-2xl border border-(--color-line) bg-(--color-surface) p-4 md:bottom-6 md:left-auto md:right-6 md:max-w-sm">
       <p className="text-sm leading-relaxed text-(--color-muted)">
         {text.common.cookies}
       </p>

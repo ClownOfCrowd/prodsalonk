@@ -10,7 +10,7 @@ export function Footer({ locale }: FooterProps) {
   const text = getUIText(locale);
 
   return (
-    <footer className="mt-24 border-t border-(--color-line) bg-(--color-surface)/70 py-10">
+    <footer className="mt-24 border-t border-(--color-line) bg-(--color-surface) py-10">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <h2 className="font-display text-xl text-(--color-text)">

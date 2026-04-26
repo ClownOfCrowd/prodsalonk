@@ -43,7 +43,7 @@ export function MobileBookCTA({ locale }: MobileBookCTAProps) {
           aria-haspopup="dialog"
           aria-expanded={isOpen}
           aria-controls="quick-booking-modal"
-          className="flex h-12 w-full items-center justify-center rounded-2xl bg-(--color-text) px-5 text-sm font-semibold tracking-wide text-(--color-surface) shadow-(--shadow-soft) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2"
+          className="flex h-12 w-full items-center justify-center rounded-2xl bg-(--color-text) px-5 text-sm font-semibold tracking-wide text-(--color-surface) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2"
         >
           {text.common.bookNow}
         </button>
