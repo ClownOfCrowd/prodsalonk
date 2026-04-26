@@ -33,9 +33,9 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${manrope.variable} ${playfair.variable} h-full scroll-smooth antialiased`}
+      className={`${manrope.variable} ${playfair.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-(--color-bg) text-(--color-text)">
+      <body className="min-h-svh bg-(--color-bg) text-(--color-text)">
         <Navbar locale={locale} />
         <main>{children}</main>
         <Footer locale={locale} />

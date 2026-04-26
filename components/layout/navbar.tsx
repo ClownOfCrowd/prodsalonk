@@ -104,7 +104,7 @@ export function Navbar({ locale }: NavbarProps) {
 
   return (
     <header
-      className="sticky top-0 z-40 border-b border-(--color-line) bg-(--color-surface)"
+      className="z-40 border-b border-(--color-line) bg-(--color-surface) md:sticky md:top-0"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="font-display text-xl tracking-wide text-(--color-text)">

@@ -35,6 +35,18 @@ body {
 html,
 body {
   overflow-x: clip;
+  min-height: 100%;
+  overscroll-behavior-y: contain;
+}
+
+body {
+  min-height: 100svh;
+}
+
+@media (max-width: 1024px) {
+  html {
+    scroll-behavior: auto !important;
+  }
 }
 
 .font-display {
